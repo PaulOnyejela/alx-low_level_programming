@@ -1,28 +1,27 @@
 #include "main.h"
+
 /**
- * print_square - prints a aquare
- * @size: prin size
- * Return : 0
+ * print_square - prints a square of size size
+ * @size: size of the square
+ *
+ * Return: void
  */
+
 
 void print_square(int size)
 {
-	int i;
-	int k;
+	int i, j;
 
-	if (size > 0)
+	if (size <= 0)
+		_putchar('\n');
+
+	for (i = 0; i < size; i++)
 	{
-		for (i = 0; i < size; i++)
+		for (j = 0; j < (size); j++)
 		{
-			for (k = 0; k < size; k++)
-			{
-				_putchar (35);
-			}
-			_putchar ('\n'n);
+			_putchar('#');
 		}
+		_putchar('\n');
 	}
-	else
-	{
-		_putchar ('\n');
-	}
+
 }
