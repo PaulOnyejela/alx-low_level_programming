@@ -6,10 +6,14 @@
  */
 void _puts_recursion(char *s)
 {
-	while (*s != '\0')
-	{
-		_putchar(*s); /* print letter */
-		s = s + 1;  /* point to the next letter. */
-	}
+if (*s==1)
+{
+	_putchar(*s);
+	_puts_recursion(s + 1);
+}
+else
+{
 	_putchar('\n');
+}
+
 }
