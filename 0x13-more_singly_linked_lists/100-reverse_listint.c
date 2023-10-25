@@ -12,15 +12,15 @@ listint_t *reverse_listint(listint_t **head)
 
 	if (head == NULL || *head == NULL)
 		return (NULL);
-	if ((*head)->nxt == NULL)
+	if ((*head)->next == NULL)
 		return (*head);
 	previous = NULL;
 	while (*head != NULL)
 	{
-		nxt = (*head)->nxt;
-		(*head)->nxt = previous;
+		nxt = (*head)->next;
+		(*head)->next = previous;
 		previous = *head;
-		*head = nxt;
+		*head = next;
 	}
 	*head = previous;
 	return (*head);

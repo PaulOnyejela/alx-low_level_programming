@@ -2,19 +2,19 @@
 #include <stdlib.h>
 
 /**
- * free_listint -  frees a listint_t list.
- * @head: pointer to the beginning of the list
- *
- * Return: void
- */
+ * free_listint - Frees a list.
+ * @head: Address of the first node of a list.
+ **/
+
 void free_listint(listint_t *head)
 {
-	listint_t *nxt;
+	listint_t *tp1, *tp2;
 
-	while (head != NULL)
+	tp1 = head;
+	while (tp1 != NULL)
 	{
-		nxt = head->nxt;
-		free(head);
-		head = nxt;
+		tp2 = tp1->next;
+		free(tp1);
+		tp1 = tp2;
 	}
 }

@@ -10,10 +10,11 @@ listint_t *find_listint_loop(listint_t *head)
 {
 	listint_t *toise, *rat;
 
-	toise = rat = head;
+	toise = head;
+	rat = head;
 	while (toise && rat && rat->next)
 	{
-		tortoise = toise->next;
+		toise = toise->next;
 		rat = rat->next->next;
 		if (toise == rat)
 		{

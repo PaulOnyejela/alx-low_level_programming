@@ -9,29 +9,30 @@
  *
  * Return: pointer to the indexed node
  */
+
 int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
-	unsigned int k;
-	listint_t *current, *nxt;
+	unsigned int i;
+	listint_t *current, *next;
 
 	if (head == NULL || *head == NULL)
 		return (-1);
 	if (index == 0)
 	{
-		nxt = (*head)->nxt;
+		next = (*head)->next;
 		free(*head);
-		*head = nxt;
+		*head = next;
 		return (1);
 	}
 	current = *head;
-	for (k = 0; k < index - 1; k++)
+	for (i = 0; i < index - 1; i++)
 	{
-		if (current->nxt == NULL)
+		if (current->next == NULL)
 			return (-1);
-		current = current->nxt;
+		current = current->next;
 	}
-	nxt = current->nxt;
-	current->nxt = nxt->nxt;
-	free(nxt);
+	next = current->next;
+	current->next = next->next;
+	free(next);
 	return (1);
 }
